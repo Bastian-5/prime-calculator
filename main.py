@@ -1,7 +1,7 @@
 import math
 
 primes = [2]
-wanted = 600000 #how many primes
+wanted = 10000 #how many primes
 x = 3 # number being checked if first prime not in list is unknown set to primes[len(primes)-1]+2
 
 ratio = 1
@@ -42,7 +42,7 @@ while(leng < wanted):
   prime = True
   leng = len(primes)
 
-  
+  #changes % of prime list needed to check before switching to exit clause check
   if leng == 24 : ratio = 1/6
   elif leng == 240 : ratio = 1/20
   elif leng == 1800 : ratio = 1/60
@@ -53,7 +53,7 @@ while(leng < wanted):
   elif leng == 90000 : ratio = 1/500
   elif leng == 364000 : ratio = 1/1000
 
-  split = ratio*leng
+  split = math.floor(ratio*leng)
 
   prime = primeCheck()
 
